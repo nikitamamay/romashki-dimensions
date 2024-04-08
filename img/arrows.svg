@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="44.48"
+   height="44.480038"
+   viewBox="0 -863.1 44.48 44.480037"
+   role="img"
+   focusable="false"
+   aria-labelledby="MathJax-SVG-1-Title"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="arrows.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="10.562954"
+     inkscape:cx="-11.407794"
+     inkscape:cy="0.37868195"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <title
+     id="MathJax-SVG-1-Title">{\displaystyle \lceil x\rceil }</title>
+  <defs
+     aria-hidden="true"
+     id="defs1">
+    <path
+       stroke-width="1"
+       id="E1-MJMAIN-2308"
+       d="m 174,734 q 4,12 16,16 h 108 71 q 31,0 42,-3 11,-3 11,-17 0,-14 -11,-17 -11,-3 -39,-4 -7,0 -27,0 -20,0 -35,1 h -96 v -945 q -8,-13 -18,-15 -4,0 -7,1 -3,1 -5,2 -2,1 -4,3 -2,2 -2,3 0,1 -2,4 -2,3 -2,3 z" />
+    <path
+       stroke-width="1"
+       id="E1-MJMATHI-78"
+       d="m 52,289 q 7,42 54,97 47,55 116,56 35,0 64,-18 29,-18 43,-45 42,63 101,63 37,0 64,-22 27,-22 28,-59 0,-29 -14,-47 -14,-18 -27,-22 -13,-4 -23,-4 -19,0 -31,11 -12,11 -12,29 0,46 50,63 -11,13 -40,13 -13,0 -19,-2 -38,-16 -56,-66 -60,-221 -60,-258 0,-28 16,-40 16,-12 35,-12 37,0 73,33 36,33 49,81 3,10 6,11 3,1 16,2 h 4 q 15,0 15,-8 0,-1 -2,-11 Q 486,77 440,33 394,-11 333,-11 263,-11 227,52 186,-10 133,-10 h -6 q -49,0 -70,26 -21,26 -22,55 0,32 19,52 19,20 45,20 43,0 43,-42 Q 142,81 130,66 118,51 107,46 96,41 94,41 l -3,-1 q 0,-1 6,-4 6,-3 16,-7 10,-4 19,-3 36,0 62,45 9,16 23,68 14,52 28,108 14,56 16,66 5,27 5,39 0,28 -15,40 -15,12 -34,12 -40,0 -75,-32 -35,-32 -49,-82 -2,-9 -5,-10 -3,-1 -16,-2 H 58 q -6,6 -6,11 z" />
+    <path
+       stroke-width="1"
+       id="E1-MJMAIN-2309"
+       d="m 21,717 q 0,0 0,13 0,13 11,16 11,3 43,4 h 72 109 q 10,-8 13,-15 v -970 q -7,-13 -18,-15 -4,0 -7,1 -3,1 -5,2 -2,1 -4,3 -2,2 -2,3 0,1 -2,4 -2,3 -2,3 v 944 h -96 q -14,0 -34,0 -20,0 -28,-1 -28,0 -39,4 z" />
+  </defs>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.99999"
+     d="m 3.5160114,-826.16816 12.9279996,-12.6827"
+     id="path6-9-7-3-0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2.00001"
+     d="M 36.611311,-832.50956 H 9.9800114"
+     id="path17"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2.00001"
+     d="m 9.6863114,-841.29496 v 22.675"
+     id="path19"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2.00001"
+     d="m 9.5129114,-863.09996 v 8.7854 8.7855"
+     id="path45-6-5"
+     sodipodi:nodetypes="ccc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.99999"
+     d="m 27.501911,-859.19396 -17.9889996,4.8794"
+     id="path12-6-6"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.99999"
+     d="m 27.501911,-849.43546 -17.9889996,-4.8791"
+     id="path13-8-4"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2.00001"
+     d="M 41.664211,-854.31446 H 9.6652114"
+     id="path17-0-3-0"
+     sodipodi:nodetypes="cc" />
+</svg>
