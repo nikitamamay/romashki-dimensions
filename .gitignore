@@ -131,4 +131,5 @@ dmypy.json
 
 # specific for this project
 RomashkiDimensions.exe
-release
+file_version_info.txt
+last_version.txt
