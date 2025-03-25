@@ -8,8 +8,8 @@ import src.math_utils as math_utils
 from src.resources import get_resource_path
 
 
-SPINBOX_VALUES = [0.5, 1, 2, 5, 10]
-
+SPINBOX_VALUES = [10/12, 1, 10/6, 2, 2.5, 100/24, 5, 100/12, 10]
+SPINBOX_ERROR = 0.02
 
 
 def get_next_value(x: float, is_previous: bool) -> float:
@@ -19,14 +19,16 @@ def get_next_value(x: float, is_previous: bool) -> float:
     i = 0
 
     if not is_previous:
+        x *= (1 + SPINBOX_ERROR)
         for i in range(0, l_SBV):
             v = SPINBOX_VALUES[i]
-            if v > x + math_utils.PRECISION_VALUE:
+            if v > x:
                 break
     else:
+        x *= (1 - SPINBOX_ERROR)
         for i in range(l_SBV - 1, -1, -1):
             v = SPINBOX_VALUES[i]
-            if v < x - math_utils.PRECISION_VALUE:
+            if v < x:
                 break
     nv = SPINBOX_VALUES[i] * 10 ** c10
     return nv
@@ -37,9 +39,10 @@ def get_next_value(x: float, is_previous: bool) -> float:
 class SpinBox(QtWidgets.QDoubleSpinBox):
     def __init__(self, parent = None) -> None:
         super().__init__(parent)
-        self.setRange(10**-6, 10**9)
         self.setSingleStep(0.1)
         self.setValue(1.0)
+        self.setDecimals(12)
+        self.setRange(10**-self.decimals(), 10**9)
 
     def wheelEvent(self, e: QtGui.QWheelEvent) -> None:
         delta = e.angleDelta().y()
@@ -47,7 +50,6 @@ class SpinBox(QtWidgets.QDoubleSpinBox):
         self.setValue(get_next_value(self.value(), is_prev))
 
     def setValue(self, val: float) -> None:
-        self.setDecimals(3 + 3 * int(val < 1))
         super().setValue(val)
 
 
@@ -55,6 +57,9 @@ class SpinBox(QtWidgets.QDoubleSpinBox):
 class MainWindow(QtWidgets.QWidget):
     def __init__(self, parent = None) -> None:
         super().__init__(parent)
+
+        # измерять ли углы в градусах-минутах-секундах (True) или в десятичной системе (False)
+        self._is_angle_DMS = True
 
         self.setWindowFlag(QtCore.Qt.WindowType.WindowStaysOnTopHint, True)
         self.resize(10, 10)
@@ -67,7 +72,7 @@ class MainWindow(QtWidgets.QWidget):
         self.btn_round_closest.setToolTip("Округлить до ближайшего")
         self.btn_round_closest.clicked.connect(
             lambda: self.execute(
-                lambda: round_dimensions.round_selected_dimensions(self.cb_multiple.value(), 0.5)
+                lambda: round_dimensions.round_selected_dimensions(self.cb_multiple.value(), 0.5, self._is_angle_DMS)
             )
         )
         self.btn_round_closest.setIconSize(QtCore.QSize(24, 24))
@@ -76,7 +81,7 @@ class MainWindow(QtWidgets.QWidget):
         self.btn_round_down.setToolTip("Округлить вниз")
         self.btn_round_down.clicked.connect(
             lambda: self.execute(
-                lambda: round_dimensions.round_selected_dimensions(self.cb_multiple.value(), 0)
+                lambda: round_dimensions.round_selected_dimensions(self.cb_multiple.value(), 0, self._is_angle_DMS)
             )
         )
         self.btn_round_down.setIconSize(QtCore.QSize(24, 24))
@@ -85,7 +90,7 @@ class MainWindow(QtWidgets.QWidget):
         self.btn_round_up.setToolTip("Округлить вверх")
         self.btn_round_up.clicked.connect(
             lambda: self.execute(
-                lambda: round_dimensions.round_selected_dimensions(self.cb_multiple.value(), 1)
+                lambda: round_dimensions.round_selected_dimensions(self.cb_multiple.value(), 1, self._is_angle_DMS)
             )
         )
         self.btn_round_up.setIconSize(QtCore.QSize(24, 24))
@@ -230,7 +235,7 @@ class MainWindow(QtWidgets.QWidget):
 
 if __name__ == "__main__":
 
-    values = [0.01, 0.02, 0.05, 0.1, 0.2, 0.25, 0.5, 1, 2, 2.5, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000]
-    nvs = [get_next_value(x, False) for x in values]
-    pvs = [get_next_value(x, True) for x in values]
-    print(values, nvs, pvs, sep="\n")
+    # values = [0.01, 0.02, 0.05, 0.1, 0.2, 0.25, 0.5, 1, 2, 2.5, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000]
+    values = [1]
+    for x in values:
+        print(x, get_next_value(x, False), get_next_value(x, True))

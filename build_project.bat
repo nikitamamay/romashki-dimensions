@@ -1,3 +1,9 @@
+rem Установить следующие пакеты:
+rem     pip install pyinstaller
+rem     pip install pyinstaller_versionfile
+
+
+
 @echo off
 
 cd build_misc/
@@ -23,6 +29,8 @@ pyinstaller ^
     -n RomashkiDimensions.exe
 
     rem --clean ^
+
+del .\build_misc\file_version_info.txt
 
 pause
 

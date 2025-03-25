@@ -34,6 +34,11 @@ DIMENSIONS_CLASSES = (
     KAPI7.IRadialDimension,
 )
 
+DIMENSIONS_CLASSES_ANGLE = (
+    KAPI7.IAngleDimension,
+    KAPI7.IBreakAngleDimension,
+)
+
 
 class DimensionSign(int):
     Nothing = 0  # нет значка
@@ -55,12 +60,39 @@ def iterate_selected_dimensions():
         yield (d, dt, dp)
 
 
-def round_selected_dimensions(multiple: float = 1, middle_coef: float = 0.5) -> None:
+def round_selected_dimensions(multiple: float = 1, middle_coef: float = 0.5, is_angle_DMS: bool = True) -> None:
     for d, dt, dp in iterate_selected_dimensions():
+        is_angle = isinstance(d, DIMENSIONS_CLASSES_ANGLE)
         nv = dt.NominalValue
         nt: KAPI7.ITextLine = dt.NominalText
         old = nt.Str
-        new = math_utils.round_to_number_str(nv, multiple, middle_coef).replace(".", ",")
+
+        if is_angle:
+            x = nv
+            if is_angle_DMS:
+                if math_utils.do_floats_equal(x, 0):
+                    new = "0°"
+                else:
+                    # rounding in seconds
+                    x = round(math_utils.round_to_number(x * 3600, multiple * 3600, middle_coef))
+
+                    sign = -1 if x < 0 else +1
+                    x = abs(x)
+                    v = int(x / 3600)
+                    m = int(x / 60 - v * 60)
+                    s = int(x - v * 3600 - m * 60)
+
+                    new = f"{sign * v}°"
+                    if m != 0:
+                        new += f"{m}'"
+                    if s != 0:
+                        new += f"{s}\""
+
+                    vr = v + m/60 + s/3600
+            else:
+                new = math_utils.round_to_number_str(nv, multiple, middle_coef).replace(".", ",") + "°"
+        else:
+            new = math_utils.round_to_number_str(nv, multiple, middle_coef).replace(".", ",")
 
         dt.AutoNominalValue = False
         nt.Str = new
@@ -109,7 +141,7 @@ def get_selected_dimensions(doc: KAPI7.IKompasDocument2D) -> list[KAPI7.IDrawing
     sm: KAPI7.ISelectionManager = active_doc.SelectionManager
     s_objs: typing.Iterable[KAPI7.IKompasAPIObject] = [sm.SelectedObjects] if not isinstance(sm.SelectedObjects, tuple) else sm.SelectedObjects
 
-    dms: list[KAPI7.IDimensionText] = []
+    dms: list[KAPI7.IDrawingObject] = []
 
     for obj in s_objs:
         if isinstance(obj, DIMENSIONS_CLASSES):
@@ -224,13 +256,17 @@ def check_if_dimension_not_auto(d) -> bool:
 def select_rounded_dimensions() -> None:
     doc: KAPI7.IKompasDocument2D = open_doc2d("")
 
+    dims = get_selected_dimensions(doc)
+    if len(dims) == 0:
+        dims = get_all_dimensions()
+
     active_doc = KAPI7.IKompasDocument2D1(doc)
     sm: KAPI7.ISelectionManager = active_doc.SelectionManager
-
-    dims: list[KAPI7.IKompasAPIObject] = get_all_dimensions(check_if_dimension_not_auto)
+    sm.UnselectAll()
 
     for dim in dims:
-        sm.Select(dim)
+        if check_if_dimension_not_auto(dim):
+            sm.Select(dim)
 
 
 
