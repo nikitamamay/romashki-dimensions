@@ -8,7 +8,7 @@ import src.math_utils as math_utils
 from src.resources import get_resource_path
 
 
-SPINBOX_VALUES = [10/12, 1, 10/6, 2, 2.5, 100/24, 5, 100/12, 10]
+SPINBOX_VALUES = [10/12, 1.0, 10/6, 2.0, 2.5, 100/24, 5.0, 100/12, 10.0]
 SPINBOX_ERROR = 0.02
 
 
@@ -36,13 +36,11 @@ def get_next_value(x: float, is_previous: bool) -> float:
 
 
 
-class SpinBox(QtWidgets.QDoubleSpinBox):
+class FloatInputWidget(QtWidgets.QLineEdit):
     def __init__(self, parent = None) -> None:
         super().__init__(parent)
-        self.setSingleStep(0.1)
         self.setValue(1.0)
-        self.setDecimals(12)
-        self.setRange(10**-self.decimals(), 10**9)
+        self.textChanged.connect(self.text_changed)
 
     def wheelEvent(self, e: QtGui.QWheelEvent) -> None:
         delta = e.angleDelta().y()
@@ -50,7 +48,32 @@ class SpinBox(QtWidgets.QDoubleSpinBox):
         self.setValue(get_next_value(self.value(), is_prev))
 
     def setValue(self, val: float) -> None:
-        super().setValue(val)
+        self.setText(str(val))
+
+    def value(self) -> float:
+        s = self.text().replace(",", ".")
+        try:
+            return float(s)
+        except:
+            return 1.0
+
+    def text_changed(self) -> None:
+        print('changed', end=" ")
+        state = self.validate()
+        print(self.value(), state)
+        color = ["#ff7f7f", "#fffc7f", "#ffffff"][state]
+        self.setStyleSheet(f"background-color: {color}; color: black")
+        self.update()
+
+    def validate(self) -> int:
+        s = self.text().replace(",", ".")
+        try:
+            f = float(s)
+            if f > 10**(-12) and f < 10**9:
+                return 2
+            return 1
+        except:
+            return 0
 
 
 
@@ -64,7 +87,7 @@ class MainWindow(QtWidgets.QWidget):
         self.setWindowFlag(QtCore.Qt.WindowType.WindowStaysOnTopHint, True)
         self.resize(10, 10)
 
-        self.cb_multiple = SpinBox()
+        self.cb_multiple = FloatInputWidget()
         self.cb_multiple.setToolTip("Кратность округления")
         self.cb_multiple.setSizePolicy(QtWidgets.QSizePolicy.Policy.MinimumExpanding, QtWidgets.QSizePolicy.Policy.MinimumExpanding)
 
