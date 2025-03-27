@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="1112"
-   height="1112"
-   viewBox="0 -863.1 1112 1112"
+   width="64"
+   height="64.001099"
+   viewBox="0 -863.1 63.999999 64.001096"
    role="img"
    focusable="false"
    aria-labelledby="MathJax-SVG-1-Title"
    version="1.1"
    id="svg3"
-   sodipodi:docname="star.svg"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="ICONS.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="metric.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,35 +29,23 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.42018876"
-     inkscape:cx="-203.47998"
-     inkscape:cy="502.15527"
+     inkscape:zoom="3.1231266"
+     inkscape:cx="1377.4658"
+     inkscape:cy="879.88747"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3" />
+     inkscape:current-layer="svg3"
+     showguides="true" />
   <title
      id="MathJax-SVG-1-Title">{\displaystyle \left[x\right]}</title>
   <defs
      aria-hidden="true"
-     id="defs1">
-    <path
-       stroke-width="1"
-       id="E1-MJMAIN-5B"
-       d="M 118,-250 V 750 h 137 v -40 h -97 v -920 h 97 v -40 z" />
-    <path
-       stroke-width="1"
-       id="E1-MJMATHI-78"
-       d="m 52,289 q 7,42 54,97 47,55 116,56 35,0 64,-18 29,-18 43,-45 42,63 101,63 37,0 64,-22 27,-22 28,-59 0,-29 -14,-47 -14,-18 -27,-22 -13,-4 -23,-4 -19,0 -31,11 -12,11 -12,29 0,46 50,63 -11,13 -40,13 -13,0 -19,-2 -38,-16 -56,-66 -60,-221 -60,-258 0,-28 16,-40 16,-12 35,-12 37,0 73,33 36,33 49,81 3,10 6,11 3,1 16,2 h 4 q 15,0 15,-8 0,-1 -2,-11 Q 486,77 440,33 394,-11 333,-11 263,-11 227,52 186,-10 133,-10 h -6 q -49,0 -70,26 -21,26 -22,55 0,32 19,52 19,20 45,20 43,0 43,-42 Q 142,81 130,66 118,51 107,46 96,41 94,41 l -3,-1 q 0,-1 6,-4 6,-3 16,-7 10,-4 19,-3 36,0 62,45 9,16 23,68 14,52 28,108 14,56 16,66 5,27 5,39 0,28 -15,40 -15,12 -34,12 -40,0 -75,-32 -35,-32 -49,-82 -2,-9 -5,-10 -3,-1 -16,-2 H 58 q -6,6 -6,11 z" />
-    <path
-       stroke-width="1"
-       id="E1-MJMAIN-5D"
-       d="m 22,710 v 40 H 159 V -250 H 22 v 40 h 97 v 920 z" />
-  </defs>
+     id="defs1" />
   <metadata
-     id="metadata1">
+     id="metadata11">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -63,8 +54,8 @@
     </rdf:RDF>
   </metadata>
   <path
-     style="font-size:990.512px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';stroke-width:0.999998"
-     d="m 949.74576,-476.47178 -313.425,169.372 313.425,170.245 -50.637,85.557 -293.345,-177.229 v 329.141 h -99.528 v -329.141 l -293.345,177.229 -50.637,-85.557 313.426,-170.245 -313.426,-169.372 50.637,-86.431 293.345,177.229 v -329.141 h 99.528 v 329.141 l 293.345,-177.229 z"
-     id="text1"
+     style="font-size:85.3339px;font-family:'GOST type B';-inkscape-font-specification:'GOST type B';stroke-width:0.04"
+     d="m 37.58203,-845.38685 2.833256,4.14664 0.422903,0.86217 0.08423,0.78006 q 0,1.10851 -0.930345,2.01174 -0.888025,0.86217 -2.198953,0.86217 -1.395467,0 -2.368032,-1.31379 l -3.425239,-5.0088 -3.42534,5.0088 q -0.338261,0.53373 -1.141746,1.0264 l -1.310826,0.28739 q -0.930346,0 -2.072092,-0.86217 -0.972666,-0.86217 -0.972666,-2.05279 0,-0.73901 0.507443,-1.60118 l 2.833256,-4.14664 h -5.074428 q -1.353248,0 -2.198952,-0.78006 -0.761164,-0.94428 -0.761164,-2.09384 0,-0.98534 0.718843,-1.92962 0.761164,-0.94429 2.241273,-0.94429 h 5.074428 l -2.833256,-4.14663 -0.422802,-0.86218 -0.08423,-0.78006 q 0,-1.1085 0.888025,-1.97068 0.930345,-0.90322 2.241273,-0.90322 1.395468,0 2.368032,1.31378 l 3.42534,5.00881 3.425239,-5.00881 q 0.380582,-0.57478 1.057206,-0.98534 0.676523,-0.32844 1.395468,-0.32844 0.888024,0 2.114311,0.86217 0.930345,0.90323 0.930345,2.05279 0,0.739 -0.507443,1.60118 l -2.833255,4.14663 h 5.074427 q 1.226388,0 2.072092,0.90323 0.888025,0.86217 0.888025,1.97068 0,0.98534 -0.761165,1.92962 -0.718843,0.94428 -2.198952,0.94428 z"
+     id="text1-9-1-6-8"
      aria-label="*" />
 </svg>
