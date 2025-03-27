@@ -261,7 +261,7 @@ class MainWindow(QtWidgets.QWidget):
 
         self.btn_settings = QtWidgets.QPushButton(QtGui.QIcon(get_resource_path("img/settings.svg")), "")
         self.btn_settings.setToolTip("Перейти в настройки")
-        self.btn_settings.clicked.connect(self.config_window.show)
+        self.btn_settings.clicked.connect(self._show_settings)
 
 
         self.layout_ = QtWidgets.QGridLayout()
@@ -374,6 +374,12 @@ class MainWindow(QtWidgets.QWidget):
         config.save()
         return super().closeEvent(a0)
 
+    def _show_settings(self) -> None:
+        self.config_window.show()
+        self.config_window.move(
+            int(self.x() + self.width()/2 - self.config_window.width()/2),
+            int(self.y() + self.height()/2 - self.config_window.height()/2),
+        )
 
 if __name__ == "__main__":
 
